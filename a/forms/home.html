@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+        margin: 0;
+        padding: 0;
+        background: #2d3436;
+        }
+        p{
+        font-size: 30px;
+        color: red;
+        font-family: "Times New Roman", Times, serif;
+        }
+        .middle{
+        position: absolute;
+        top: 10%;
+        left: 90%;
+        transform: translate(-50%,-50%);
+        }
+        .middle1{
+        position: absolute;
+        top: 70%;
+        left: 90%;
+        transform: translate(-50%,-50%);
+        font-size: 40px;
+        color: red;
+        font-family: "Times New Roman", Times, serif;
+        }
+        .btn{
+        position: relative;
+        display: block;
+        color: white;
+        font-size: 14px;
+        font-family: "montserrat";
+        text-decoration: none;
+        margin: 30px 0;
+        border: 2px solid #3399FF;
+        padding: 14px 60px;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: 10s all ease;
+        }
+
+        .btn12{
+        border: 3px solid #3498db;
+        background : none;
+        padding: 14px 60px;
+        font-size:20px;
+        font-family:"montserrat";
+        cursor: pointer;
+        margin: 30px 0;
+        transition: 0.8s;
+        position:relative;
+        overflow:hidden;
+        }
+
+        .btn123{
+        color: #3498db;
+        }
+        .btn123:hover{
+        color: #fff;
+        }
+        .btn12::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background:  #3498db;
+        z-index: -1;
+        transition: 0.8s;
+        }
+        .btn123::before{
+        top: 0%;
+        border-radius: 0 0 50% 50%;
+        }
+        .btn123:hover::before{
+        height:180%
+        }
+        .btn::before{
+        background:#3399FF;
+        content:"";
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-70%,-70%);
+        z-index: -1;
+        transition all 0.6s ease;
+        }
+        .btn1::before{
+        width: 100%;
+        height:0;
+        transform: translate(-50%,-50%) rotate(45deg);
+        }
+        .btn1:hover::before{
+        height:160%;
+        }
+
+        div.a {
+       font-size: 30px;
+       color: red;
+       text-align: right;
+         }
+
+    </style>
+</head>
+<body  bgcolor="gray">
+<h1 style="font-size:60px;">"WELCOME TO CODER WORLD "<br> LET'S GET START</h1>
+<h1>{{msg}} {{username}}</h1>
+<form action="expression" method="POST">
+      {% csrf_token %}
+    <!--First :<input type="text"  name="i1"><br>
+    second:<input type="text"  name="i2">-->
+    {{  form.as_p }}
+
+     <div class="middle1">
+          <p>{{context}}<br>{{accuracy}}</p>
+     <input type="submit" value="Start" class="btn12 btn123">
+
+     </div>
+</form>
+<div class="middle">
+  <a href="http://127.0.0.1:8000/login/login" class="btn btn1">login</a>
+</div>
+
+</body>
+</html>
+
